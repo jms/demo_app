@@ -3,7 +3,9 @@
 test: 
 
 ```bash
-time -p curl -H "Content-Type: application/json" -X POST -d '{"email":"test@example.com","password":"test"}' http://127.0.0.1:5000/login
+time -p curl -H "Content-Type: application/json" \
+-X POST -d '{"email":"test@example.com","password":"test"}' \
+http://127.0.0.1:5000/login
 ```
 
 ```json
