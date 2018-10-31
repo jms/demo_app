@@ -11,16 +11,14 @@ app = Flask(__name__)
 app.secret_key = os.environ.get('SECRET_KEY')
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('SQLALCHEMY_DATABASE_URI')
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
 app.config['WTF_CSRF_ENABLED'] = False
 app.config['SECURITY_PASSWORD_HASH'] = 'sha512_crypt'
 
 # redefine hashing_schemes, 'hex_md5' is checked.
-app.config['SECURITY_HASHING_SCHEMES'] = ['md5_crypt', 'hex_md5']
-
+app.config['SECURITY_HASHING_SCHEMES'] = ['argon2', 'md5_crypt', 'sha256_crypt', 'hex_md5']
+app.config['SECURITY_DEPRECATED_HASHING_SCHEMES'] = ['hex_md5']
 
 app.config['SECURITY_PASSWORD_SALT'] = os.environ.get('SALT')
-
 db = SQLAlchemy(app)
 
 # Define models
