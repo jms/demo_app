@@ -15,7 +15,7 @@ app.config['WTF_CSRF_ENABLED'] = False
 app.config['SECURITY_PASSWORD_HASH'] = 'sha512_crypt'
 
 # redefine hashing_schemes, 'hex_md5' is checked.
-app.config['SECURITY_HASHING_SCHEMES'] = ['argon2', 'md5_crypt', 'sha256_crypt', 'hex_md5']
+app.config['SECURITY_HASHING_SCHEMES'] = ['argon2', 'sha256_crypt', 'hex_md5']
 app.config['SECURITY_DEPRECATED_HASHING_SCHEMES'] = ['hex_md5']
 
 app.config['SECURITY_PASSWORD_SALT'] = os.environ.get('SALT')
