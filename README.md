@@ -1,5 +1,10 @@
 # demo_app
 
+Run:
+```bash
+pipenv run flask run
+```
+
 test: 
 
 ```bash
