@@ -8,7 +8,7 @@ pipenv run flask run
 test: 
 
 ```bash
-time -p curl -H "Content-Type: application/json" \
+bash$ time -p curl -H "Content-Type: application/json" \
 -X POST -d '{"email":"test@example.com","password":"test"}' \
 http://127.0.0.1:5000/login
 ```
@@ -20,7 +20,7 @@ http://127.0.0.1:5000/login
   }, 
   "response": {
     "user": {
-      "authentication_token": "WyIxIiwiJDEkZFlFNXpiQXMkRWJUUFNsUWRyY2JJaGVpd1htNy41MSJd.DrTiPw.MOe_885QQTbkg1kPaEUJsZ9BinY", 
+      "authentication_token": "<token>", 
       "id": "1"
     }
   }
@@ -28,7 +28,7 @@ http://127.0.0.1:5000/login
 ```
 
 ```bash
-time -p curl -H 'Authentication-Token:WyIxIiwiJDEkZFlFNXpiQXMkRWJUUFNsUWRyY2JJaGVpd1htNy41MSJd.DrTiPw.MOe_885QQTbkg1kPaEUJsZ9BinY' http://localhost:5000/hello
+bash$ time -p curl -H 'Authentication-Token:<token>' http://localhost:5000/hello
 ```
 
 ```text
