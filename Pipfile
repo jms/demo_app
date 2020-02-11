@@ -11,7 +11,7 @@ flask-security = "*"
 "argon2-cffi" = "*"
 
 [dev-packages]
-pylint = "<2.0.0"
+pylint = "<3.0.0"
 
 [requires]
 python_version = "3.7"
