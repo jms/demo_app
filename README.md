@@ -1,11 +1,34 @@
 # demo_app
 
-Run:
+Setup:
+
+- Create a empty postgresql database
+
+- Create the dot env file
+
 ```bash
-pipenv run flask run
+touch .flaskenv  # or touch .env
 ```
 
-test: 
+add to the `.flaskenv` file the required variables:
+
+```ini
+FLASK_ENV=development
+FLASK_DEBUG=1
+SQLALCHEMY_DATABASE_URI=postgresql://username:password@host:5432/database
+SECRET_KEY=<secret key>
+SALT=<salt key>
+```
+
+Run:
+
+```bash
+poetry install  # install packages
+poetry run flask run  # run the app
+
+```
+
+test:
 
 ```bash
 bash$ time -p curl -H "Content-Type: application/json" \
@@ -17,10 +40,10 @@ http://127.0.0.1:5000/login
 {
   "meta": {
     "code": 200
-  }, 
+  },
   "response": {
     "user": {
-      "authentication_token": "<token>", 
+      "authentication_token": "<token>",
       "id": "1"
     }
   }
